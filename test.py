@@ -1,6 +1,6 @@
 import unittest
 from random import randint
-from impl import k_folds,folds_sample
+from impl import k_folds,k_sample
 
 
 def rando_data(count=20):
@@ -32,7 +32,7 @@ class TestK_Fold(unittest.TestCase):
     def test_data_existence(self):
         data = rando_data(50)
         folded = k_folds(data)
-        train, validation = folds_sample(folded, 1)
+        train, validation = k_sample(folded, 1)
 
         self.assertEqual(folded[1], validation,
                         'The validation set should be folded[i]')

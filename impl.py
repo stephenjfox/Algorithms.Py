@@ -10,5 +10,5 @@ def _inner_fold_yield(folds_as_list, skip_index):
         if i is not skip_index:
             yield _list
 
-def folds_sample(folded_data, k_index=0):
+def k_sample(folded_data, k_index=0):
     return list(_inner_fold_yield(folded_data, k_index)), folded_data[k_index]
