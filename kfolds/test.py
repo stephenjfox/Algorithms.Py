@@ -1,7 +1,6 @@
 import unittest
 from random import randint
-from impl import k_folds,k_sample
-
+from impl import *
 
 def rando_data(count=20):
     return [randint(1, 30) for _ in range(count)]
