@@ -38,6 +38,15 @@ class TestK_Fold(unittest.TestCase):
         self.assertEqual(len(folded) - 1, len(train),
                         'Folded and prep data should have a length delta of 1')
 
+    def test_sample_with_multiple_indicies(self):
+        folded = k_folds(rando_data(25), 5)
+        train, validation = k_sample(folded, [1, 2])
+
+        self.assertEqual(2, len(validation),
+                        'The validation set should preserve the designated indices')
+
+        self.assertEqual([folded[1], folded[2]], validation,
+                        'Sampling should have returned the data at the target indices')
 
 if __name__ == '__main__':
     unittest.main()
