@@ -11,10 +11,10 @@ def generate_numbers(count: int):
 def timed(func):
     """Timing decorator for func invocations"""
     def timer(*args, **kwargs):
-        t = time.clock()
+        t = time.perf_counter()
         result = func(*args, **kwargs) # invoke the thing itself
 
-        print("Execution took:", t - time.clock())
+        print("Execution took:", t - time.perf_counter())
         return result
     
     return timer

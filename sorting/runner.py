@@ -1,5 +1,5 @@
 from utils import generate_numbers
-from insertionsort import sort
+from quicksort import sort
 
 
 if __name__ == "__main__":
