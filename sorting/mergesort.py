@@ -1,11 +1,10 @@
 from utils import timed
 from copy import deepcopy
 
-@timed
 def sort(numbers: list) -> list:
     values_to_merge = deepcopy(numbers)
 
-    mergesort(values_to_merge)
+    timed(mergesort)(values_to_merge)
     for i, v in enumerate(values_to_merge):
         numbers[i] = v
 
